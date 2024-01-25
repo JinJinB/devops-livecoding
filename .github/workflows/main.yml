@@ -68,4 +68,3 @@ jobs:
           tags:  ${{secrets.DOCKER_USERNAME}}/devops-livecoding:httpd
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/main' }}
-
