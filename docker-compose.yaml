@@ -17,6 +17,14 @@ services:
     volumes:
       - db-volume:/var/lib/postgresql/data
 
+  frontend:
+    build: ../devops-front
+    container_name: my-frontend
+    networks:
+      - my-network
+    environment:
+      - VUE_APP_API_URL=jin-young.bae.takima.cloud/api
+
   httpd:
     build: ./http-server
     ports:
@@ -25,6 +33,7 @@ services:
       - my-network
     depends_on:
       - backend
+      - frontend
 
 volumes:
   db-volume:

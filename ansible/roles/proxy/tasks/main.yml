@@ -1,0 +1,17 @@
+---
+# tasks file for roles/proxy
+- name: Launch Frontend
+  docker_container:
+    name: my-frontend
+    image: jinjinb/devops-livecoding:front
+    networks:
+      - name: my-network
+
+- name: Launch proxy
+  docker_container:
+    name: httpd
+    image: jinjinb/devops-livecoding:httpd
+    networks:
+      - name: my-network
+    ports:
+      - "80:80"
