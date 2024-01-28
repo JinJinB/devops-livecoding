@@ -1,0 +1,9 @@
+---
+# tasks file for roles/database
+
+- name: Launch database
+  docker_container:
+    name: my-db
+    image: jinjinb/devops-livecoding:database
+    networks:
+      - name: my-network

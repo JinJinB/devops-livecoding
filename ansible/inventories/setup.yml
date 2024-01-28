@@ -1,0 +1,7 @@
+all:
+ vars:
+   ansible_user: centos
+   ansible_ssh_private_key_file: /home/jin/id_rsa
+ children:
+   prod:
+     hosts:  jin-young.bae.takima.cloud
